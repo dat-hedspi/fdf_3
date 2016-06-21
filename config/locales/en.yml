@@ -19,3 +19,10 @@ en:
   home:
     title: "Project 1"
     this: "This is the home page for the"
+  login:
+    title: "Log in"
+    signup: "Sign Up"
+  footer:
+    title: "Framgia Laboratory"
+  error:
+    msgs: "The form contains"
