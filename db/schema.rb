@@ -101,10 +101,15 @@ ActiveRecord::Schema.define(version: 20160620083012) do
     t.string   "email"
     t.string   "phone_number"
     t.string   "address"
-    t.boolean  "admins",          default: false
+    t.boolean  "admins",              default: false
     t.string   "password_digest"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.string   "remember_digest"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
   end
 
 end

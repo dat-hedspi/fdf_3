@@ -32,13 +32,22 @@ en:
     cate_nil: "Category nil!"
     prod_nil: "Product nil!"
     user_nil: "User nil!"
+    session_create_e : "Invalid email/password combination"
   login:
     title: "Log in"
     signup: "Sign Up"
     create: "Create my account"
     signup: "Sign up now!"
+    newuser: "New user ?"
+    remember: "Remember me on this computer"
   footer:
     title: "Framgia Laboratory"
   error:
     messengers: "The form contains "
     title: "error"
+  user:
+    title: "Users"
+    acccount: "Account"
+    profile: "Profile"
+    setting: "Settings"
+    logout: "Logout"
