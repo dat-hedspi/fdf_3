@@ -21,6 +21,8 @@ en:
     this: "This is the home page for the"
   categoryindex:
     title: "Category"
+  productindex:
+    title: "Product"
   product:
     name: "Name: "
     description: "Description: "
