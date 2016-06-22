@@ -1,0 +1,10 @@
+<% provide :title, @category.name %>
+<div class="col-md-4">
+  <% flash.each do |message_type, message| %>
+   <div class="alert alert-<%= message_type %>"><%= message %></div>
+  <% end %>
+  <ul class="categories">
+    <%= render @category %>
+  </ul>
+  <%= render "categories/show_product" %>
+</div>

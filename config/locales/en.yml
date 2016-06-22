@@ -19,3 +19,13 @@ en:
   home:
     title: "Project 1"
     this: "This is the home page for the"
+  categoryindex:
+    title: "Category"
+  product:
+    name: "Name: "
+    description: "Description: "
+    price: "Price: "
+    number: "Number: "
+  flash:
+    cate_nil: "Category nil!"
+    prod_nil: "Product nil!"
