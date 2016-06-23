@@ -20,7 +20,10 @@ en:
     title: "Project 1"
     this: "This is the home page for the"
   categoryindex:
+    submit: "Create"
     title: "Category"
+    create: "Create Category"
+    success: "Create category success"
   productindex:
     title: "Product"
   product:
@@ -33,6 +36,7 @@ en:
     prod_nil: "Product nil!"
     user_nil: "User nil!"
     session_create_e : "Invalid email/password combination"
+
   login:
     title: "Log in"
     signup: "Sign Up"
@@ -53,8 +57,11 @@ en:
     setting: "Settings"
     logout: "Logout"
   edit:
-    title: "Edit profile"
+    title: "Edit"
     description: "Update your profile"
     button: "Save changes"
   profile:
     update: "Profile update successful!!!"
+  create:
+    title_cate: "Create Category"
+    button: "Create"
