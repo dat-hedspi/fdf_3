@@ -22,8 +22,8 @@ class User < ActiveRecord::Base
     format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
   validates :phone_number, presence: true
   validates :address, presence: true, length: {maximum: 255}
-  validates :password, presence: true, length: {minimum: 6}
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
+  validates :password, presence: true, length: {minimum: 6}, allow_nil: true
 
   before_save :downcase_email
   has_secure_password

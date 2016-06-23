@@ -40,6 +40,7 @@ en:
     signup: "Sign up now!"
     newuser: "New user ?"
     remember: "Remember me on this computer"
+    danger: "Please log in."
   footer:
     title: "Framgia Laboratory"
   error:
@@ -51,3 +52,9 @@ en:
     profile: "Profile"
     setting: "Settings"
     logout: "Logout"
+  edit:
+    title: "Edit profile"
+    description: "Update your profile"
+    button: "Save changes"
+  profile:
+    update: "Profile update successful!!!"
