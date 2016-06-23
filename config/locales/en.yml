@@ -21,6 +21,8 @@ en:
     this: "This is the home page for the"
   categoryindex:
     title: "Category"
+  productindex:
+    title: "Product"
   product:
     name: "Name: "
     description: "Description: "
@@ -29,3 +31,14 @@ en:
   flash:
     cate_nil: "Category nil!"
     prod_nil: "Product nil!"
+    user_nil: "User nil!"
+  login:
+    title: "Log in"
+    signup: "Sign Up"
+    create: "Create my account"
+    signup: "Sign up now!"
+  footer:
+    title: "Framgia Laboratory"
+  error:
+    messengers: "The form contains "
+    title: "error"

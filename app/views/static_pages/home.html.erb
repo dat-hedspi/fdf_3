@@ -1,6 +1,9 @@
-<h1> <%= t "home.title" %> </h1>
-<p>
-  <%= t "home.this" %>
-  <a href="http://www.railstutorial.org/"><%= t "help.rails" %></a>
-  <%= t "home.title" %>
-</p>
+<div class="center jumbotron">
+  <h1><%= t "home.title" %></h1>
+  <p>
+    <%= t "home.this" %>
+    <a href="http://www.railstutorial.org/"><%= t "help.rails" %></a>
+    <%= t "home.title" %>
+  </p>
+  <%= link_to t("login.signup"), signup_path, class: "btn btn-lg btn-primary" %>
+</div>
