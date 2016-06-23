@@ -1,4 +1,12 @@
 <li id="category-<%= category.id %>">
   <span class="name"><%= link_to category.name, category %></span>
-  <span><%= link_to t("edit.title"), edit_admin_category_path(category), class: "btn btn-primary" %></span>
+  <span>
+    <%= link_to t("edit.title"), edit_admin_category_path(category), class: "btn btn-primary" %>
+  </span>
+  <span>
+    <%= link_to t("destroy.button"), admin_category_path(category),
+      method: :delete,
+      class: "btn btn-primary",
+      data: {confirm: t("destroy.confirm")} %>
+  </span>
 </li>
