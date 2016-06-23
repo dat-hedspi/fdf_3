@@ -1,4 +1,6 @@
 class CategoriesController < ApplicationController
+  before_action :logged_in_user, only: [:show, :index]
+
   def show
     @category = Category.find_by_id params[:id]
     if @category.nil?
@@ -13,4 +15,5 @@ class CategoriesController < ApplicationController
     @categories = Category.all
     @products = Product.all
   end
+
 end

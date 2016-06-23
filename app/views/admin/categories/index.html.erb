@@ -1,8 +1,5 @@
 <% provide :title, t("categoryindex.title") %>
 <div class="col-md-4">
-  <% flash.each do |message_type, message| %>
-    <div class="alert alert-<%= message_type %>"><%= message %></div>
-  <% end %>
   <ul class="categories">
     <%= render @categories %>
   </ul>
@@ -10,4 +7,3 @@
     <%= link_to t("categoryindex.create"), new_admin_category_path, class: "btn btn-primary" %>
   <% end %>
 </div>
-<%= render "categories/show_product" %>
