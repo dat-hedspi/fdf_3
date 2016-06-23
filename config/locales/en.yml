@@ -24,6 +24,7 @@ en:
     title: "Category"
     create: "Create Category"
     success: "Create category success"
+    update_success: "Update category success"
   productindex:
     title: "Product"
   product:
@@ -59,6 +60,7 @@ en:
     title: "Edit"
     description: "Update your profile"
     button: "Save changes"
+    cate_description: "Update category"
   profile:
     update: "Profile update successful!!!"
   create:

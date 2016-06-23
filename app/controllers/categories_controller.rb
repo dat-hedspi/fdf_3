@@ -12,7 +12,7 @@ class CategoriesController < ApplicationController
   end
 
   def index
-    @categories = Category.all
+    @categories = Category.all.order_by_name
     @products = Product.all
   end
 

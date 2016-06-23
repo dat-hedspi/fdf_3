@@ -1,13 +1,26 @@
 class Admin::CategoriesController < ApplicationController
   before_action :logged_in_user
   before_action :verify_admin
+  before_action :find_category, only: [:edit, :update]
 
   def index
-    @categories = Category.all
+    @categories = Category.all.order_by_name
   end
 
   def new
     @category = Category.new
+  end
+
+  def edit
+  end
+
+  def update
+    if @category.update_attributes category_params
+      flash[:success] = t "categoryindex.update_success"
+      redirect_to admin_categories_path
+    else
+      render :edit
+    end
   end
 
   def create
@@ -24,5 +37,13 @@ class Admin::CategoriesController < ApplicationController
   private
   def category_params
     params.require(:category).permit :name
+  end
+
+  def find_category
+    @category = Category.find_by_id params[:id]
+    if @category.nil?
+      flash[:danger] = t "flash.cate_nil"
+      redirect_to categories_path
+    end
   end
 end
