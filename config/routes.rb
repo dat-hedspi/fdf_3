@@ -10,10 +10,11 @@ Rails.application.routes.draw do
 
   resources :products, only: [:show, :index]
   resources :categories, only: [:show, :index]
-  resources :users, only: [:create, :show, :edit, :update]
+  resources :users, except: [:destroy]
   namespace :admin do
     resources :users, only: [:destroy, :index]
     resources :categories
     resources :products
   end
+  resources :relationships, only: [:create, :destroy, :index]
 end
