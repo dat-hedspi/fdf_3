@@ -69,6 +69,7 @@ en:
     prod_description: "Update product"
   profile:
     update: "Profile update successful!!!"
+    view: "View my profile"
   create:
     title_cate: "Create Category"
     title_prod: "Create Product"
@@ -76,3 +77,8 @@ en:
   destroy:
     button: "Delete"
     confirm: "You sure?"
+  follow:
+    following: "following"
+    follower: "follower"
+    follow: "follow"
+    unfollow: "unfollow"

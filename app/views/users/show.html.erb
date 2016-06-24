@@ -15,6 +15,10 @@
               <p><%= @user.email %></p>
               <p><%= @user.phone_number %></p>
               <p><%= @user.address %></p>
+              <section class="stats">
+                <%= render 'shared/stats' %>
+              </section>
+              <%= render 'follow_form' if logged_in? %>
             </div>
           </section>
         </div>
