@@ -13,6 +13,6 @@ class Product < ActiveRecord::Base
   validates :price, presence: true
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
   
-  scope :sort, -> {order created_at: :desc}
+  scope :order_by_time, -> {order created_at: :desc}
 
 end

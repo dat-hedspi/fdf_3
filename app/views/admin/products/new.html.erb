@@ -1,0 +1,25 @@
+<% provide :title, t("create.title_prod") %>
+<h1><%= t "create.title_prod" %></h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for [:admin, @product] do |f| %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control" %>
+
+      <%= f.label :description %>
+      <%= f.text_field :description, class: "form-control" %>
+
+      <%= f.label :price %>
+      <%= f.number_field :price, class: "form-control" %>
+
+      <%= f.label :number %>
+      <%= f.number_field :number, class: "form-control" %>
+
+      <%= f.label :category_id %>
+      <%= f.select :category_id, @categories.collect{|p| [p.name, p.id]} %>
+
+      <%= f.submit t("create.button"), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
