@@ -1,0 +1,8 @@
+<li>
+  <span><%= link_to user_avatar_select(user), user %></span>
+  <span><%= link_to user.name, user %></span>
+  <p><%= user.email %></p>
+  <p><%= user.phone_number %></p>
+  <p><%= user.address %></p>
+</li>
+<%= link_to t("destroy.button"), admin_user_path(user), method: :delete, data: { confirm: t("destroy.confirm") } %>

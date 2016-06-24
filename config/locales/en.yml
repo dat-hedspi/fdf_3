@@ -36,7 +36,6 @@ en:
     prod_nil: "Product nil!"
     user_nil: "User nil!"
     session_create_e : "Invalid email/password combination"
-
   login:
     title: "Log in"
     signup: "Sign Up"
@@ -65,3 +64,6 @@ en:
   create:
     title_cate: "Create Category"
     button: "Create"
+  destroy:
+    button: "Delete"
+    confirm: "You sure?"
