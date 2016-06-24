@@ -1,7 +1,7 @@
 class Admin::CategoriesController < ApplicationController
   before_action :logged_in_user
   before_action :verify_admin
-  before_action :find_category, only: [:edit, :update]
+  before_action :find_category, only: [:edit, :update, :destroy]
 
   def index
     @categories = Category.all.order_by_name
@@ -31,6 +31,13 @@ class Admin::CategoriesController < ApplicationController
       redirect_to admin_categories_path
     else
       render :new
+    end
+  end
+
+  def destroy
+    if @category.destroy
+      flash[:success] = t "categoryindex.delete_success"
+      redirect_to admin_categories_path
     end
   end
 

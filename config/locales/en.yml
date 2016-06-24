@@ -25,6 +25,7 @@ en:
     create: "Create Category"
     success: "Create category success"
     update_success: "Update category success"
+    delete_success: "Delete category success"
   productindex:
     title: "Product"
   product:
