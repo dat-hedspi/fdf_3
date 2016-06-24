@@ -31,6 +31,7 @@ en:
     title: "Product"
     create: "Create product"
     success: "Create product success"
+    update_success: "Update product success"
   product:
     name: "Name: "
     description: "Description: "
@@ -65,6 +66,7 @@ en:
     description: "Update your profile"
     button: "Save changes"
     cate_description: "Update category"
+    prod_description: "Update product"
   profile:
     update: "Profile update successful!!!"
   create:
