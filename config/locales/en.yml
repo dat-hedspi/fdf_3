@@ -32,6 +32,7 @@ en:
     create: "Create product"
     success: "Create product success"
     update_success: "Update product success"
+    delete_success: "Delete product success"
   product:
     name: "Name: "
     description: "Description: "

@@ -1,6 +1,6 @@
 class Admin::CategoriesController < ApplicationController
   before_action :logged_in_user, :verify_admin
-  before_action :find_category, only: [:edit, :update, :destroy]
+  before_action :find_category, except: [:index, :new, :create]
 
   def index
     @categories = Category.all.order_by_name
@@ -8,6 +8,9 @@ class Admin::CategoriesController < ApplicationController
 
   def new
     @category = Category.new
+  end
+
+  def show
   end
 
   def edit
@@ -49,7 +52,7 @@ class Admin::CategoriesController < ApplicationController
     @category = Category.find_by_id params[:id]
     if @category.nil?
       flash[:danger] = t "flash.cate_nil"
-      redirect_to categories_path
+      redirect_to admin_categories_path
     end
   end
 end
