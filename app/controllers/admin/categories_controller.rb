@@ -1,6 +1,5 @@
 class Admin::CategoriesController < ApplicationController
-  before_action :logged_in_user
-  before_action :verify_admin
+  before_action :logged_in_user, :verify_admin
   before_action :find_category, only: [:edit, :update, :destroy]
 
   def index
