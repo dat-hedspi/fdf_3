@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
 
-  has_attached_file :avatar, styles: {medium: "300x300", large: "450x450#"}
+  has_attached_file :avatar, styles: {small: "30x30", medium: "300x300"}
   has_many :orders, dependent: :destroy
   has_many :suggestions, dependent: :destroy
   has_many :comments, dependent: :destroy

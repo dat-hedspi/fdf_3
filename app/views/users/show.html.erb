@@ -1,5 +1,24 @@
 <% provide :title, @user.name %>
-<p><%= @user.name %></p>
-<p><%= @user.email %></p>
-<p><%= @user.address %></p>
-<p><%= @user.phone_number %></p>  
+<div class="posts-wrapper">
+  <div class="row profile-header">
+    <section class="bh_banner container-fluid">
+      <div class="row">
+        <div class="bh_bgr text-center">
+          <section class="cd-intro">
+            <div class="wrapper cd-intro-content bouncy">
+              <div class="img cd-btn">
+                <div class="img-circle">
+                  <%= user_avatar_select @user %>
+                </div>
+              </div>
+              <span><%= link_to @user.name, @user %></span>
+              <p><%= @user.email %></p>
+              <p><%= @user.phone_number %></p>
+              <p><%= @user.address %></p>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
