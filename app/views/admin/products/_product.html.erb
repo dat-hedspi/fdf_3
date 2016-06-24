@@ -1,5 +1,5 @@
 <li id="product-<%= product.id %>">
-  <span class="image-show"><%= link_to product_image_select(product), product %></span><br>
+  <span class="image-show"><%= link_to product_image_select(product), admin_product_path(product) %></span><br>
   <span class="name"><%= t("product.name") %><%= product.name %></span><br>
   <span class="description"><%= t("product.description") %><%= product.description %></span><br>
   <span class="price"><%= t("product.price") %><%= product.price %></span><br>
@@ -8,5 +8,11 @@
     <%= link_to t("edit.title"), 
       edit_admin_product_path(product), 
       class: "btn btn-primary" %>
+  </span>
+  <span>
+    <%= link_to t("destroy.button"), admin_product_path(product),
+      method: :delete,
+      class: "btn btn-primary",
+      data: {confirm: t("destroy.confirm")} %>
   </span>
 </li>

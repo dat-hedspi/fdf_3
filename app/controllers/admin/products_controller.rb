@@ -1,6 +1,6 @@
 class Admin::ProductsController < ApplicationController
   before_action :logged_in_user, :verify_admin
-  before_action :find_product, only: [:edit, :update]
+  before_action :find_product, except: [:index, :new, :create]
 
   def index
     @products = Product.all.order_by_time
@@ -9,6 +9,9 @@ class Admin::ProductsController < ApplicationController
   def new
     @product = Product.new
     @categories = Category.all.order_by_name
+  end
+
+  def show
   end
 
   def create
@@ -32,6 +35,13 @@ class Admin::ProductsController < ApplicationController
       redirect_to admin_products_path
     else
       render :edit
+    end
+  end
+
+  def destroy
+    if @product.destroy
+      flash[:success] = t "productindex.delete_success"
+      redirect_to admin_products_path
     end
   end
 
