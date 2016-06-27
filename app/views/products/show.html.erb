@@ -2,5 +2,12 @@
 <div class="col-md-8">
   <ul class="products" id="current-product">
     <%= render @product %>
-   </ul>
+  </ul>
+  <ul id="comments_<%= @product.id %>">
+    <%= render @product.comments.order_by_time %>
+  </ul>
+  <% if logged_in? %>
+    <%= render "shared/comment_form" %>
+  <% end %>
 </div>
+<div class="clearfix"></div>

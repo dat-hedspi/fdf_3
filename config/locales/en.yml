@@ -43,6 +43,7 @@ en:
     prod_nil: "Product nil!"
     user_nil: "User nil!"
     session_create_e : "Invalid email/password combination"
+    comment: "Comment is too long"
   login:
     title: "Log in"
     signup: "Sign Up"
@@ -83,3 +84,5 @@ en:
     follower: "follower"
     follow: "follow"
     unfollow: "unfollow"
+  comment:
+    add: "Add comment ..."
