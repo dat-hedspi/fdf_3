@@ -4,6 +4,9 @@
   <span class="description"><%= t("product.description") %><%= product.description %></span><br>
   <span class="price"><%= t("product.price") %><%= product.price %></span><br>
   <span class="number"><%= t("product.number") %><%= product.number %></span><br>
+  <span class="rate">
+    <%= t "product.rate" %><%= product.rates.average :vote %>
+  </span><br>
   <span>
     <%= link_to t("edit.title"), 
       edit_admin_product_path(product), 

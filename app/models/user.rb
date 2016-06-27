@@ -66,6 +66,11 @@ class User < ActiveRecord::Base
     following.include? other_user
   end
   
+  def has_voted product
+    products = self.rates.collect {|r| r.product}
+    products.include? product
+  end
+
   private
   def downcase_email
     self.email = email.downcase
