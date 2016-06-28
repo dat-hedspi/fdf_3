@@ -96,3 +96,12 @@ en:
     success: "Rate success"
     fail: "You has voted, can't vote agian"
     error: "Rate error"
+  suggestion:
+    title: "Suggestion"
+    post: "Posted : "
+    at: "ago"
+    nil: "Suggestion nil!!"
+    add: "Add your suggestion ..."
+    button: "Post"
+    created: "Suggestion created!"
+    not_created: "Suggestion not created!"

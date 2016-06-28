@@ -18,7 +18,9 @@ Rails.application.routes.draw do
     resources :users, only: [:destroy, :index]
     resources :categories
     resources :products
+    resources :suggestions, only: [:index, :destroy]
   end
   resources :relationships, only: [:create, :destroy, :index]
   resources :rates, only: [:create]
+  resources :suggestions, only: [:index, :create]
 end
