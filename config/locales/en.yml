@@ -38,6 +38,7 @@ en:
     description: "Description: "
     price: "Price: "
     number: "Number: "
+    rate: "Rate: "
   flash:
     cate_nil: "Category nil!"
     prod_nil: "Product nil!"
@@ -86,3 +87,12 @@ en:
     unfollow: "unfollow"
   comment:
     add: "Add comment ..."
+  rates:
+    one_star: "One star"
+    two_star: "Two star"
+    three_star: "Three star"
+    four_star: "Four star"
+    five_star: "Five star"
+    success: "Rate success"
+    fail: "You has voted, can't vote agian"
+    error: "Rate error"

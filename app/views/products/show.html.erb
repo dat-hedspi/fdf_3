@@ -8,6 +8,11 @@
   </ul>
   <% if logged_in? %>
     <%= render "shared/comment_form" %>
+    <% unless current_user.has_voted @product %>
+      <% @votes.each do |key, value| %>
+        <%= render "shared/rate_form", key: key %>
+      <% end %>
+    <% end %>
   <% end %>
 </div>
 <div class="clearfix"></div>

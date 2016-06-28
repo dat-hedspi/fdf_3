@@ -14,5 +14,6 @@ class Product < ActiveRecord::Base
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
   
   scope :order_by_time, -> {order created_at: :desc}
+  scope :order_by_name, -> {order name: :desc}
 
 end

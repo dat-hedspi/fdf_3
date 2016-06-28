@@ -20,4 +20,5 @@ Rails.application.routes.draw do
     resources :products
   end
   resources :relationships, only: [:create, :destroy, :index]
+  resources :rates, only: [:create]
 end
