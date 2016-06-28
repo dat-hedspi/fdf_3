@@ -1,0 +1,15 @@
+<li id="suggestion-<%= suggestion.id %>">
+  <span class="name"><%= link_to suggestion.user.name, @user %> :</span>
+  <span class="content"><%= suggestion.content %></span>
+  <span class="timestamp">
+    <%= t "suggestion.post" %>
+    <%= time_ago_in_words suggestion.created_at %>
+    <%= t "suggestion.at" %>
+  </span>
+  <span>
+    <%= link_to t("destroy.button"), admin_suggestion_path(suggestion),
+      method: :delete,
+      class: "btn btn-primary",
+      data: {confirm: t("destroy.confirm")} %>
+  </span>
+</li>
