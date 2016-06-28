@@ -1,0 +1,15 @@
+<li>
+  <span class="content post">
+    <%= link_to comment.user.name, comment.user %>:
+  </span>
+  <span class="content post">
+    <%= comment.content%>
+  </span>
+  <span class="timestamp">
+    <%= time_ago_in_words comment.created_at %> .
+    <% if current_user? comment.user %>
+      <%= link_to t("destroy.button"), comment, method: :delete,
+        data: {confirm: t("destroy.confirm")} %>
+    <% end %>
+  </span>
+</li>

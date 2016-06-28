@@ -8,7 +8,10 @@ Rails.application.routes.draw do
   post "login" => "sessions#create"
   delete "logout" => "sessions#destroy"
 
-  resources :products, only: [:show, :index]
+  resources :products, only: [:show, :index] do
+    resources :comments, only: [:create, :destroy]
+  end
+  resources :comments
   resources :categories, only: [:show, :index]
   resources :users, except: [:destroy]
   namespace :admin do
