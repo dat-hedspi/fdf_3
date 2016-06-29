@@ -1,7 +1,8 @@
 <% provide :title, t("categoryindex.title") %>
 <div class="col-md-4">
+  <%= render "shared/filter_form" %>
   <ul class="categories">
     <%= render @categories %>
   </ul>
 </div>
-<%= render "categories/show_product" %>
+<%= render "show_product" %>

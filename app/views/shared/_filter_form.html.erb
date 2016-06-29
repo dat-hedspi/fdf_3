@@ -1,0 +1,46 @@
+<div class="dropdown">
+  <%= t "filter.title" %>
+  <a href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+    <%= t "filter.index" %><b class="glyphicon glyphicon-filter"></b>
+  </a>
+  <ul class="dropdown-menu">
+    <li>
+      <%= link_to t("filter.by_name_a_to_z"),
+        order: t("filter.name"),
+        direction: t("filter.desc") %>
+    </li>
+    <li>
+      <%= link_to t("filter.by_name_z_to_a"),
+        order: t("filter.name"),
+        direction: t("filter.asc") %>
+    </li>
+    <li>
+      <%= link_to t("filter.by_time_newest"),
+        order: t("filter.created_at"),
+        direction: t("filter.asc") %>
+    </li>
+    <li>
+      <%= link_to t("filter.by_time_lodest"),
+        order: t("filter.created_at"),
+        direction: t("filter.desc") %>
+    </li>
+    <li>
+      <%= link_to t("filter.by_price_high"),
+        order: t("filter.price"),
+        direction: t("filter.asc") %>
+    </li>
+    <li>
+      <%= link_to t("filter.by_price_low"),
+        order: t("filter.price"),
+        direction: t("filter.desc") %>
+    </li>
+    <li>
+      <%= link_to t("filter.by_rate_high"),
+        direction: t("filter.asc")  %>
+    </li>
+    <li>
+      <%= link_to t("filter.by_rate_low"),
+        direction: t("filter.desc")  %>
+    </li>
+  </ul>
+</div>

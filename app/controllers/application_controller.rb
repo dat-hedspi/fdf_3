@@ -16,4 +16,12 @@ class ApplicationController < ActionController::Base
   def verify_admin
     redirect_to root_path unless current_user.admins?
   end
+
+  def check_column order
+    Product.column_names.include?(order) ? order : t("filter.created_at")
+   end
+  
+  def check_direction direction
+    t("filter.asc") == direction ? t("filter.desc") : t("filter.asc")
+  end
 end

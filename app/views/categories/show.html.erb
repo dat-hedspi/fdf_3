@@ -1,8 +1,6 @@
 <% provide :title, @category.name %>
 <div class="col-md-4">
-  <% flash.each do |message_type, message| %>
-   <div class="alert alert-<%= message_type %>"><%= message %></div>
-  <% end %>
+  <%= render "shared/filter_form" %>
   <ul class="categories">
     <%= render @category %>
   </ul>
