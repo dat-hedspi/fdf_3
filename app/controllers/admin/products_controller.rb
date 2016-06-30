@@ -3,7 +3,13 @@ class Admin::ProductsController < ApplicationController
   before_action :find_product, except: [:index, :new, :create]
 
   def index
-    @products = Product.all.order_by_time
+    @products = if params[:order] && params[:direction]
+      Product.order_by(check_column(params[:order]), check_direction(params[:direction]))
+    elsif params[:direction]
+      Product.order_by_rate check_direction params[:direction]
+    else
+      Product.all
+    end
   end
 
   def new
@@ -17,7 +23,6 @@ class Admin::ProductsController < ApplicationController
   def create
     @product = Product.new product_params
     if @product.save
-      @products = Product.all.order_by_time
       flash[:success] = t "productindex.success"
       redirect_to admin_products_path
     else

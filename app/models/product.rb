@@ -13,7 +13,10 @@ class Product < ActiveRecord::Base
   validates :price, presence: true
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
   
-  scope :order_by_time, -> {order created_at: :desc}
-  scope :order_by_name, -> {order name: :desc}
-
+  scope :order_by, -> (filter, direction) {order filter + " " + direction}
+  scope :order_by_rate, -> (direction){ 
+    joins(:rates)
+    .group("products.id")
+    .order("avg(rates.vote) #{direction}")
+  }
 end

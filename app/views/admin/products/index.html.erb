@@ -1,5 +1,6 @@
 <% provide :title, t("productindex.title") %>
 <div class="col-md-8">
+  <%= render "shared/filter_form" %>
   <% if current_user.admins? %>
     <%= link_to t("productindex.create"), new_admin_product_path, class: "btn btn-primary" %>
   <% end %>
@@ -7,3 +8,4 @@
     <%= render @products %>
    </ul>
 </div>
+<div class="clearfix"></div>
