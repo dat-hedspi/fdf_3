@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  after_action :create_order, only: [:create]
+
   def new
   end
 
@@ -17,5 +19,11 @@ class SessionsController < ApplicationController
   def destroy
     log_out if logged_in?
     redirect_to root_url
+  end
+
+  private
+  def create_order
+    order = Order.create(status: 0, total_pay: 0,  user_id: current_user.id)
+    session[:order_id] = order.id
   end
 end

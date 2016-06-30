@@ -34,6 +34,12 @@ module SessionsHelper
     end
   end
 
+  def current_order
+    if order_id = session[:order_id]
+      @current_order ||= Order.find_by id: order_id
+    end
+  end
+
   def logged_in?
     current_user.present?
   end
@@ -46,7 +52,12 @@ module SessionsHelper
 
   def log_out
     forget current_user
+    order = Order.find_by id: session[:order_id]
+    if order.present?
+      order.destroy
+    end
     session.delete :user_id
+    session.delete :order_id 
     @current_user = nil
   end
 end
