@@ -19,6 +19,7 @@ class CategoriesController < ApplicationController
 
   def index
     @categories = Category.all.order_by_name
+    @order_detail = current_order.order_details.new
     @products = if params[:order] && params[:direction]
       Product.order_by(check_column(params[:order]), check_direction(params[:direction]))
     elsif params[:direction]
