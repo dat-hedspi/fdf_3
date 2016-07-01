@@ -1,0 +1,5 @@
+<% if logged_in? %>
+  <%= link_to t("order.title",
+    size: current_order.order_details.size,
+    pay: number_to_currency(current_order[:total_pay])), "#" %>
+<% end %>

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :products, only: [:show, :index] do
     resources :comments, only: [:create, :destroy]
   end
+  resources :order_details, except: [:show, :new]
   resources :comments
   resources :categories, only: [:show, :index]
   resources :users, except: [:destroy]

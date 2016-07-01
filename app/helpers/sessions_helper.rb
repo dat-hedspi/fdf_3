@@ -34,6 +34,14 @@ module SessionsHelper
     end
   end
 
+  def current_order
+    if session[:order_id].nil?
+      Order.new
+    else
+      Order.find session[:order_id]
+    end
+  end
+
   def logged_in?
     current_user.present?
   end
@@ -41,12 +49,15 @@ module SessionsHelper
   def forget user 
     user.forget
     cookies.delete :user_id
+    cookies.delete :order_id
     cookies.delete :remember_token
   end
 
   def log_out
     forget current_user
     session.delete :user_id
+    session.delete :order_id
     @current_user = nil
+    @current_order = nil
   end
 end
