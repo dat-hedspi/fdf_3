@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :products, only: [:show, :index] do
     resources :comments, only: [:create, :destroy]
   end
-  resources :orders, only: :show
+  resources :orders, only: [:show, :update]
   resources :order_details, except: [:show, :new]
   resources :comments
   resources :categories, only: [:show, :index]

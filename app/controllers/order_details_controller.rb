@@ -26,7 +26,7 @@ class OrderDetailsController < ApplicationController
   def update
     if @order_detail.update_attributes order_detail_params
       flash[:success] = t "order.update_succ"
-      redirect_to order_details_path
+      redirect_to order_path
     else
       flash[:danger] = t "order.update_err"
       redirect_to :edit

@@ -1,11 +1,24 @@
 class OrdersController < ApplicationController
-  before_action :logged_in_user, :check_prod_and_curren_order_exits, only: [:show]
-
+  before_action :logged_in_user, only: [:show, :update, :index]
+  before_action :check_prod_and_curren_order_exits, only: [:show, :update, :index]
   def show
     @order_details = @order.order_details
   end
 
+  def update
+    if @order.update_attributes order_params
+      flash[:success] = t "order.ordered"
+      redirect_to root_path
+    end
+    session.delete :order_id
+    @current_order = nil
+  end
+
   private
+  def order_params
+    params.require(:order).permit :status
+  end
+
   def check_prod_and_curren_order_exits
     @order = Order.find_by id: session[:order_id]
     unless @order

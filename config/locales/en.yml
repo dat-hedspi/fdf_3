@@ -146,7 +146,8 @@ en:
     status: "Status"
     button: "Add to Cart"
     count: "Quanity up"
-    buy: "BUY"
+    buy_direct: "Direct delivery"
+    buy_atm: "ATM cart"
     continue: "Continue Shopping"
     order: "Order"
     id: "ID"
@@ -156,3 +157,7 @@ en:
     shipping: "shipping"
     delivered: "delivered"
     update_succ: "Order Update success"
+    ordered: "Ordered!!!"
+  cart:
+    create: "Cart create at: "
+    sign: "Authorized signature: "
