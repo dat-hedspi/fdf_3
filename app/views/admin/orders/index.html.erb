@@ -1,0 +1,13 @@
+<%= render "shared/admin_filter_order_form" %>
+<table>
+  <tr>
+    <th></th>
+    <th><%= t "user.name" %></th>
+    <th><%= t "order.id" %></th>
+    <th><%= t "order.total" %></th>
+    <th><%= t "order.status" %></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <%= render @orders %>
+</table>

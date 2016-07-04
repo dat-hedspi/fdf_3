@@ -61,7 +61,7 @@ class OrderDetailsController < ApplicationController
 
   def check_prod_and_curren_order_exits
     @order = Order.find_by id: session[:order_id]
-    unless @order.present?
+    unless @order
       @order = Order.create user_id: current_user.id
       session[:order_id] = @order.id
     end

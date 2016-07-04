@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     resources :categories
     resources :products
     resources :suggestions, only: [:index, :destroy]
+    resources :orders, except: [:new, :destroy, :create]
   end
   resources :relationships, only: [:create, :destroy, :index]
   resources :rates, only: [:create]

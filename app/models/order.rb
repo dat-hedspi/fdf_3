@@ -6,6 +6,10 @@ class Order < ActiveRecord::Base
   before_create :init_order
   before_save :update_subtotal
 
+  scope :order_by_status, -> (status) {where status: status}
+
+  enum status: ["blank", "ordered", "shipping", "delivered"]
+
   def subtotal
     order_details.collect {|od| od.valid? ? (od.quantity * od.unit_price) : 0}.sum
   end

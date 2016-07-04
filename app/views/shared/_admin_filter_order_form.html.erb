@@ -1,0 +1,20 @@
+<div class="dropdown">
+  <%= t "filter.title" %>
+  <a href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+    <%= t "filter.index" %><b class="glyphicon glyphicon-filter"></b>
+  </a>
+  <ul class="dropdown-menu">
+    <li>
+      <%= link_to t("filter.blank"), status: 0 %>
+    </li>
+    <li>
+      <%= link_to t("filter.ordered"), status: 1 %>
+    </li>
+    <li>
+      <%= link_to t("filter.shipping"), status: 2 %>
+    </li>
+    <li>
+      <%= link_to t("filter.delivered"), status: 3 %>
+    </li>
+  </ul>
+</div>
