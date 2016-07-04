@@ -19,9 +19,13 @@ class ApplicationController < ActionController::Base
 
   def check_column order
     Product.column_names.include?(order) ? order : t("filter.created_at")
-   end
+  end
   
   def check_direction direction
     t("filter.asc") == direction ? t("filter.desc") : t("filter.asc")
+  end
+
+  def check_status status
+    Order.statuses.values.include?(status.to_i) ? status : 1
   end
 end

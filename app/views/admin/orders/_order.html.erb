@@ -1,0 +1,13 @@
+<tr>
+  <td class="td-btn">
+    <%= link_to user_avatar_select(order.user), user_path(order.user) %>
+  </td>
+  <td><%= link_to order.user.name, user_path(order.user) %></td>
+  <td><%= link_to order.id, admin_order_path(order) %></td>
+  <td><%= number_to_currency order.total_pay%></td>
+  <td><%= order.status%></td>
+  <td>
+    <%= link_to t("edit.title"), edit_admin_order_path(order)%>
+  </td>
+</tr>
+<div class="clearfix"></div>

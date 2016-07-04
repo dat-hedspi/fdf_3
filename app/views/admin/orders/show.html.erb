@@ -1,0 +1,11 @@
+<%= t "order.order" %>: <%= @order.id %>
+<%= link_to t("edit.title"), edit_admin_order_path(@order) %>
+<table>
+  <tr>
+    <th><%= t "order.name" %></th>
+    <th><%= t "order.quanity" %></th>
+    <th><%= t "order.unit_price" %></th>
+    <th></th>
+  </tr>
+  <%= render @order_details %>
+</table> 
