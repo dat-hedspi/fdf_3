@@ -1,5 +1,6 @@
 <% if logged_in? %>
   <%= link_to t("order.title",
     size: current_order.order_details.size,
-    pay: number_to_currency(current_order[:total_pay])), "#" %>
+    pay: number_to_currency(current_order[:total_pay])),
+    order_path(current_order) unless current_order.id.nil? %>
 <% end %>

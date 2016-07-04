@@ -3,6 +3,7 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find_by_id params[:id]
+    @order_detail = current_order.order_details.new
     if @category.nil?
       flash[:danger] = t "flash.cate_nil"
       redirect_to categories_path

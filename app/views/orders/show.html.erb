@@ -1,0 +1,14 @@
+<table>
+  <tr>
+    <th><%= t "order.name" %></th>
+    <th><%= t "order.quanity" %></th>
+    <th><%= t "order.unit_price" %></th>
+    <th></th>
+  </tr>
+  <%= render @order_details %>
+</table> 
+<span class="pirce">
+  <% t "order.total"%><%= number_to_currency current_order[:total_pay] %>
+</span>
+<%= link_to t("order.continue"), categories_path, class: "btn btn-primary" %>
+<%= link_to t("order.buy"), "#", class: "btn btn-primary" %>

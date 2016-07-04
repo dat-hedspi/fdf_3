@@ -1,16 +1,16 @@
-<div>
-  <li id="product-<%= order_detail.id %>">
-    <span class="name"><%= t "product.name" %><%= order_detail.product.name %></span><br>
-    <span class="quantity"><%= t "order.quanity" %><%= order_detail.quantity %></span><br>
-    <span class="price"><%= t "order.unit_price" %><%= order_detail.unit_price %></span><br>
-  </li>
-</div>
-<% if current_user? @order.user %>
-  <%= link_to t("edit.edit"), edit_order_detail_path(order_detail),
-    class: "btn btn-primary" %>
-  <%= link_to t("destroy.button"), order_detail_path(order_detail),
-    method: :delete,
-    class: "btn btn-primary",
-    data: {confirm: t("destroy.confirm")} %>
-<% end %>
+<tr>
+  <td><%= order_detail.product.name %></td>
+  <td><%= order_detail.quantity %></td>
+  <td><%= order_detail.unit_price %></td>
+  <td>
+    <% if current_user? @order.user %>
+      <%= link_to t("edit.edit"), edit_order_detail_path(order_detail),
+        class: "btn btn-primary" %>
+      <%= link_to t("destroy.button"), order_detail_path(order_detail),
+        method: :delete,
+        class: "btn btn-primary",
+        data: {confirm: t("destroy.confirm")} %>
+    <% end %>
+  </td>
+</tr>
 <div class="clearfix"></div>
