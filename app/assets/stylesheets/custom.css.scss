@@ -546,3 +546,35 @@ section.bh_banner .bh_link-list li.active:after{
   height: 100%;
   border-radius: 50%;
 }
+.atm-cart{
+  display: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.td-atm-content{
+  background-color: #FFFFFF;
+  margin-top: 150px;
+  padding-top: 50px;
+}
+.block{
+  display: block !important;
+}
+.icon{
+  background-image: url("delete-button.png");
+  width: 24px;
+  height: 24px;
+  top: 20px;
+  right: 20px;
+  display: block;
+  position: absolute;
+  cursor: pointer;
+}
+.td-atm{
+  width: 100%;
+  p{
+    margin-bottom: 0px !important;
+  }
+}

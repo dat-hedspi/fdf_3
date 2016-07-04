@@ -7,6 +7,8 @@
       <%= f.label :quantity %>
       <%= f.number_field :quantity, class: "form-control", min: 1 %>
 
+      <%= f.hidden_field :product_id, product_id: @order_detail[:product_id] %>
+
       <%= f.submit t("edit.button"), class: "btn btn-primary" %>
     <% end %>
   </div>

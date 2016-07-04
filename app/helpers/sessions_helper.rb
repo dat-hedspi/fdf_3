@@ -55,6 +55,7 @@ module SessionsHelper
 
   def log_out
     forget current_user
+    current_order.destroy
     session.delete :user_id
     session.delete :order_id
     @current_user = nil
