@@ -3,6 +3,7 @@ class Admin::SuggestionsController < ApplicationController
 
   def index
     @suggestions = Suggestion.order_by_time
+    .paginate page: params[:page], per_page: Settings.size
   end
 
   def destroy
@@ -11,10 +12,9 @@ class Admin::SuggestionsController < ApplicationController
       flash[:danger] = t "suggestion.nil"
       redirect_to :back
     else
-      if suggestion.destroy
-        flash[:success] = t "productindex.delete_success"
-        redirect_to admin_suggestions_path
-      end
+      suggestion.destroy
+      flash[:success] = t "productindex.delete_success"
+      redirect_to admin_suggestions_path
     end
   end
 end

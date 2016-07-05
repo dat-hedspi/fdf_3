@@ -3,7 +3,8 @@ class Admin::CategoriesController < ApplicationController
   before_action :find_category, except: [:index, :new, :create]
 
   def index
-    @categories = Category.all.order_by_name
+    @categories = Category.order_by_name
+      .paginate page: params[:page], per_page: Settings.size
   end
 
   def new

@@ -17,9 +17,11 @@ class Admin::OrdersController < ApplicationController
 
   def index
     if params[:status]
-      @orders = Order.order_by_status check_status params[:status]
+      @orders = Order.order_by_status(check_status params[:status])
+        .paginate page: params[:page], per_page: Settings.size
     else
-      @orders = Order.order_by_status 1
+      @orders = Order.order_by_status(1)
+        .paginate page: params[:page], per_page: Settings.size
     end
   end
 
