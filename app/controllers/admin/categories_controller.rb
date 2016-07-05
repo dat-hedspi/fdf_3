@@ -50,7 +50,7 @@ class Admin::CategoriesController < ApplicationController
   end
 
   def find_category
-    @category = Category.find_by_id params[:id]
+    @category = Category.find_by id: params[:id]
     if @category.nil?
       flash[:danger] = t "flash.cate_nil"
       redirect_to admin_categories_path

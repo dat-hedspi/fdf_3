@@ -1,5 +1,5 @@
 class OrderDetailsController < ApplicationController
-  before_action :logged_in_user
+  before_action :logged_in_user, :normal_user?
   before_action :check_prod_and_curren_order_exits, except: [:show, :new]
   before_action :find_order_detail, only: [:edit, :update, :destroy]
   before_action :check_prod_exist_in_cart, only: [:create]
@@ -60,8 +60,9 @@ class OrderDetailsController < ApplicationController
   end
 
   def check_prod_and_curren_order_exits
-    @order = Order.find_by id: session[:order_id]
-    unless @order
+    if current_order.id = session[:order_id]
+      @order = current_order
+    else
       @order = Order.create user_id: current_user.id
       session[:order_id] = @order.id
     end
