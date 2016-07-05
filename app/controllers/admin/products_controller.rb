@@ -5,16 +5,22 @@ class Admin::ProductsController < ApplicationController
   def index
     @products = if params[:order] && params[:direction]
       Product.order_by(check_column(params[:order]), check_direction(params[:direction]))
+        .paginate page: params[:page], per_page: Settings.size
     elsif params[:direction]
-      Product.order_by_rate check_direction params[:direction]
+      Product.order_by_rate(check_direction params[:direction])
+        .paginate page: params[:page], per_page: Settings.size
     else
-      Product.all
+      Product.order_by_time.paginate page: params[:page], per_page: Settings.size
     end
   end
 
   def new
     @product = Product.new
     @categories = Category.all.order_by_name
+    if @categories.empty?
+      flash[:danger] = t "flash.cate_nil"
+      redirect_to new_admin_category_path
+    end
   end
 
   def show
@@ -52,7 +58,7 @@ class Admin::ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit :name, :description, 
+    params.require(:product).permit :name, :description, :image,
       :price, :number, :category_id
   end
 

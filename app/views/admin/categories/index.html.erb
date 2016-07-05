@@ -1,9 +1,10 @@
 <% provide :title, t("categoryindex.title") %>
 <div class="col-md-4">
+  <%= link_to t("categoryindex.create"), new_admin_category_path, class: "btn btn-primary" %>
+  <%= will_paginate %>
   <ul class="categories">
     <%= render @categories %>
   </ul>
-  <% if current_user.admins? %>
-    <%= link_to t("categoryindex.create"), new_admin_category_path, class: "btn btn-primary" %>
-  <% end %>
+  <%= will_paginate %>
 </div>
+<div class="clearfix"></div>
