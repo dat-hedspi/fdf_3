@@ -1,8 +1,12 @@
 class OrdersController < ApplicationController
   before_action :logged_in_user, only: [:show, :update, :index]
-  before_action :check_prod_and_curren_order_exits, only: [:show, :update, :index]
+  before_action :check_prod_and_curren_order_exits, only: [:show, :update]
   def show
     @order_details = @order.order_details
+  end
+
+  def index
+    @orders = Order.find_by user_id: current_user.id
   end
 
   def update

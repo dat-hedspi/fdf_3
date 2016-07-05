@@ -161,3 +161,5 @@ en:
   cart:
     create: "Cart create at: "
     sign: "Authorized signature: "
+  summary:
+    title: "Summary"
