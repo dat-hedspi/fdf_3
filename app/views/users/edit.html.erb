@@ -5,6 +5,9 @@
     <%= form_for @user do |f| %>
       <%= render "shared/error_messages", object: @user %>
 
+      <%= user_avatar_select @user %>
+      <%= f.file_field :avatar, accept: "image/jpeg,image/gif,image/png" %>
+
       <%= f.label :name %>
       <%= f.text_field :name, class: "form-control" %>
 

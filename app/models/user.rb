@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   attr_accessor :remember_token
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
+  VALID_PHONE_REGEX = /\d[0-9]\)*\z/
 
   has_attached_file :avatar, styles: {small: "30x30", medium: "300x300"}
   has_many :orders, dependent: :destroy
@@ -20,7 +21,10 @@ class User < ActiveRecord::Base
   validates :name, presence: true, length: {maximum: 50}
   validates :email, presence: true, length: {maximum: 50},
     format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
-  validates :phone_number, presence: true
+  validates :phone_number, presence: true,
+    numericality: true,
+    length: {minimum: 10, maximum: 11},
+    format: {with: VALID_PHONE_REGEX}
   validates :address, presence: true, length: {maximum: 255}
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
   validates :password, presence: true, length: {minimum: 6}, allow_nil: true

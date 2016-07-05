@@ -1,5 +1,7 @@
 <div class="col-md-8">
+  <%= will_paginate @products %>
   <ul class="products", id="current-product">
     <%= render @products %>
-   </ul>
+  </ul>
+  <%= will_paginate @products %>
 </div>

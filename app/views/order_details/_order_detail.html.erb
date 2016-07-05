@@ -1,5 +1,9 @@
 <tr>
-  <td><%= order_detail.product.name %></td>
+  <% if order_detail.product.nil? %>
+    <td><%= t "order.na" %></td>
+  <% else %>
+    <td><%= order_detail.product.name %></td>
+  <% end %>
   <td><%= order_detail.quantity %></td>
   <td><%= order_detail.unit_price %></td>
   <td>
