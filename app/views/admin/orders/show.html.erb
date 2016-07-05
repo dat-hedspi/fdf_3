@@ -1,3 +1,4 @@
+<% provide :title, t("order.order") %>
 <%= t "order.order" %>: <%= @order.id %>
 <%= link_to t("edit.title"), edit_admin_order_path(@order) %>
 <table>
@@ -8,4 +9,6 @@
     <th></th>
   </tr>
   <%= render @order_details %>
-</table> 
+</table>
+<%= t "order.total" %>: <%= number_to_currency @order.total_pay %>
+<div class="clearfix"></div>

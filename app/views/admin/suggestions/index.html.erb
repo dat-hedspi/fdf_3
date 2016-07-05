@@ -1,5 +1,8 @@
-<section>
-  <% @suggestions.each do |suggestion| %>
-    <%= render "admin/suggestions/suggestion", suggestion: suggestion %>
-  <% end %>
-</section>
+<% provide :title, t("suggestion.title") %>
+<div>
+  <%= will_paginate %>
+  <ul class="suggestion">
+    <%= render @suggestions %>
+  </ul>
+  <%= will_paginate %>
+</div>
