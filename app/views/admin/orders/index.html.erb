@@ -1,3 +1,4 @@
+<% provide :title, t("order.order") %>
 <%= render "shared/admin_filter_order_form" %>
 <table>
   <tr>
@@ -11,3 +12,5 @@
   </tr>
   <%= render @orders %>
 </table>
+<%= will_paginate %>
+<div class="clearfix"></div>

@@ -1,7 +1,14 @@
 <% provide :title, t("user.title") %>
-<h1><%= t "user.title" %></h1>
-<%= will_paginate %>
-<ul class="users">
+<table>
+  <tr>
+    <th></th>
+    <th><%= t "user.name" %></th>
+    <th><%= t "user.email" %></th>
+    <th><%= t "user.phone" %></th>
+    <th><%= t "user.address" %></th>
+    <th></th>
+  </tr>
   <%= render @users %>
-</ul>
+</table>
 <%= will_paginate %>
+<div class="clearfix"></div>

@@ -1,8 +1,15 @@
-<li>
-  <span><%= link_to user_avatar_select(user), user %></span>
-  <span><%= link_to user.name, user %></span>
-  <p><%= user.email %></p>
-  <p><%= user.phone_number %></p>
-  <p><%= user.address %></p>
-</li>
-<%= link_to t("destroy.button"), admin_user_path(user), method: :delete, data: { confirm: t("destroy.confirm") } %>
+<tr id="user-<%= user.id %>">
+  <td class="td-btn">
+    <%= link_to user_avatar_select(user), user %>
+  </td>
+  <td><%= link_to user.name, user %></td>
+  <td><%= user.email %></td>
+  <td><%= user.phone_number %></td>
+  <td><%= user.address %></td>
+  <td>
+    <%= link_to t("destroy.button"), admin_user_path(user), method: :delete,
+      class: "btn btn-primary",
+      data: {confirm: t("destroy.confirm")} unless user.admins? %>
+  </td>
+</tr>
+<div class="clearfix"></div>

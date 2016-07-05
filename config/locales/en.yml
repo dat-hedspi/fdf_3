@@ -68,6 +68,10 @@ en:
     setting: "Settings"
     logout: "Logout"
     name: "Name"
+    email: "Email"
+    phone: "Phone Number"
+    address: "Address"
+    deleted: "User deleted"
   edit:
     edit: "edit"
     title: "Edit"
@@ -133,6 +137,7 @@ en:
     asc: "asc"
     desc: "desc"
   order:
+    na: "N/A"
     title: "%{size} Items in Cart: %{pay}"
     create_succ: "Add to Cart success"
     create_err: "Add to Cart error"
@@ -151,7 +156,7 @@ en:
     continue: "Continue Shopping"
     order: "Order"
     id: "ID"
-    total: "total Pay"
+    total: "Total Pay"
     blank: "blank"
     ordered: "ordered"
     shipping: "shipping"

@@ -1,21 +1,34 @@
-<li id="product-<%= product.id %>">
-  <span class="image-show"><%= link_to product_image_select(product), admin_product_path(product) %></span><br>
-  <span class="name"><%= t("product.name") %><%= product.name %></span><br>
-  <span class="description"><%= t("product.description") %><%= product.description %></span><br>
-  <span class="price"><%= t("product.price") %><%= product.price %></span><br>
-  <span class="number"><%= t("product.number") %><%= product.number %></span><br>
-  <span class="rate">
-    <%= t "product.rate" %><%= product.rates.average :vote %>
-  </span><br>
-  <span>
-    <%= link_to t("edit.title"), 
-      edit_admin_product_path(product), 
-      class: "btn btn-primary" %>
-  </span>
-  <span>
-    <%= link_to t("destroy.button"), admin_product_path(product),
-      method: :delete,
-      class: "btn btn-primary",
-      data: {confirm: t("destroy.confirm")} %>
-  </span>
-</li>
+<div>
+  <li id="product-<%= product.id %>">
+    <span class="image-show">
+      <%= link_to product_image_select(product),admin_product_path(product) %>
+    </span><br>
+    <span class="name">
+      <%= t "product.name" %><%= product.name %>
+    </span><br>
+    <span class="description">
+      <%= t "product.description" %><%= product.description %>
+    </span><br>
+    <span class="price">
+      <%= t "product.price" %><%= number_to_currency product.price %>
+    </span><br>
+    <span class="number"><%= t "product.number"  %><%= product.number %></span><br>
+    <% if product.rates.average(:vote).present? %>
+      <span class="rate">
+        <%= t "product.rate" %><%= product.rates.average :vote %>
+      </span><br>
+    <% end %>
+    <span>
+      <%= link_to t("edit.title"), 
+        edit_admin_product_path(product), 
+        class: "btn btn-primary" %>
+    </span>
+    <span>
+      <%= link_to t("destroy.button"), admin_product_path(product),
+        method: :delete,
+        class: "btn btn-primary",
+        data: {confirm: t("destroy.confirm")} %>
+    </span>
+  </li>
+</div>
+<div class="clearfix"></div>
