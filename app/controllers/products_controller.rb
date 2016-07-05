@@ -2,6 +2,7 @@ class ProductsController < ApplicationController
   before_action :logged_in_user, only: [:show, :index]
   
   def show
+    session[:return_to] ||= request.referer
     @category = Category.all
     @product = Product.find_by_id params[:id]
     @rate = Rate.new

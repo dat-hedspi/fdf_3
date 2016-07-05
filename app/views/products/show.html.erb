@@ -1,4 +1,5 @@
 <% provide :title, @product.name %>
+<%= link_to t("productindex.back"), session.delete(:return_to) %>
 <div class="col-md-8">
   <ul class="products" id="current-product">
     <%= render @product %>
