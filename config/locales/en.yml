@@ -17,7 +17,7 @@ en:
     toget: "To get help on this sample app, see the"
     book: "book"
   home:
-    title: "Project 1"
+    title: "Getting stated!!!"
     this: "This is the home page for the"
   categoryindex:
     submit: "Create"
@@ -62,6 +62,17 @@ en:
     logged: "You are logged in"
   footer:
     title: "Framgia Laboratory"
+    coppy-right: "Copyright © 2016 Framgia Laboratory"
+    power: "Powered by Hà, Đạt"
+    contact: "Contact Us"
+    framgia: "Framgia Vietnam Co., Ltd"
+    add-1: "13F Keangnam Landmark 72 Tower, Plot E6, Pham Hung Road, Nam Tu Liem District., Ha Noi"
+    labo: "Laboratory"
+    add-2: "9F HTP Building, 434 Tran Khat Chan, 1km from Bach Khoa University, Ha Noi"
+    connect: "Connect"
+    intro: "Introduce"
+    intro-1: "IT là lĩnh vực công bình và không giới hạn, nơi mỗi cá nhân được chia sẻ cơ hội và nhìn nhận thông qua nỗ lực thực sự. Tận dụng những lợi thế của IT mang lại, chúng tôi không ngừng hoàn thiện, trở thành nền tảng cho sự phát triển dịch vụ toàn cầu."
+    intro-2: "Tương lai trong tầm tay, Make it awesome. Framgia Vietnam CEO – Taihei Kobayashi"
   error:
     messengers: "The form contains "
     title: "error"
@@ -173,3 +184,15 @@ en:
     sign: "Authorized signature: "
   summary:
     title: "Summary"
+  framgia:
+    title: "Framgia Laboratory"
+  section:
+    food-1: "In present, many people barely have a chance to sit at home and cook fresh-made meals."
+    food-2: "Our website is the solution of this."
+    food-3: "You can order many amazing food."
+    food-title: "Food"
+    drink-title: "Drink"
+    drink-1: "You can also order drink in this site"
+    framgia: "Framgia Laboratory"
+    thanks: "Special thanks"
+    thanks-content: "A special thanks to Framgia Laboratory, to every trainer for traning ruby and rails for us"

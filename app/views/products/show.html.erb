@@ -1,19 +1,29 @@
 <% provide :title, @product.name %>
-<%= link_to t("productindex.back"), session.delete(:return_to) %>
-<div class="col-md-8">
+<div class="col-md-8 td-product-show">
   <ul class="products" id="current-product">
-    <%= render @product %>
+    <%= render "product_show", product: @product %>
   </ul>
-  <ul id="comments_<%= @product.id %>">
+</div>
+<div class="col-md-4">
+  <%= link_to "", session[:return_to], class: "icon" %>
+  <ul class="td-product-comment" id="comments_<%= @product.id %>">
+    <span class="name"><%= t "product.name" %><%= @product.name %></span><br>
+    <span class="description"><%= t "product.description" %><%= @product.description %></span><br>
+    <span class="price"><%= t "product.price" %><%= @product.price %></span><br>
+    <span class="number"><%= t "product.number" %><%= @product.number %></span><br>
+    <span class="rate">
+      <%= t "product.rate" %><%= @product.rates.average :vote %>
+    </span><br>
     <%= render @product.comments.order_by_time %>
-  </ul>
-  <% if logged_in? %>
-    <%= render "shared/comment_form" %>
-    <% unless current_user.has_voted @product %>
-      <% @votes.each do |key, value| %>
-        <%= render "shared/rate_form", key: key %>
+    <% if logged_in? %>
+      <%= render "shared/comment_form" %>
+      <% unless current_user.has_voted @product %>
+        <% @votes.each do |key, value| %>
+          <%= render "shared/rate_form", key: key, value: value %>
+        <% end %>
       <% end %>
     <% end %>
-  <% end %>
+  </ul>
+  <div class="clearfix"></div>
 </div>
 <div class="clearfix"></div>
