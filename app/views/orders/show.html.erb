@@ -1,39 +1,43 @@
-<table>
-  <tr>
-    <th><%= t "order.name" %></th>
-    <th><%= t "order.quanity" %></th>
-    <th><%= t "order.unit_price" %></th>
-    <th></th>
-  </tr>
-  <%= render @order_details %>
-</table>
-<% if current_order.id == @order.id %>
-  <span class="pirce">
-    <% t "order.total"%><%= number_to_currency current_order[:total_pay] %>
-  </span>
-  <%= link_to t("order.continue"), categories_path, class: "btn btn-primary" %>
-  <%= form_for @order do |f| %>
-    <%= f.submit t("order.buy_direct"), class: "btn btn-primary" %>
-    <%= f.hidden_field :status, value: "ordered" %>
-  <% end %>
-  <%= submit_tag t("order.buy_atm"), class: "btn btn-primary td-atm" %>
-  <div class="atm-cart">
-    <div class="col-md-8 col-md-offset-2 td-atm-content">
-      <span class="icon"></span>
-      <%= form_for @order do |f| %>
-        <%= label_tag "name", t("filter.name") %>
-        <%= text_field_tag "name" %>
-        <%= label_tag "cart-date", t("cart.create") %>
-        <%= text_field_tag "cart-date" %>
-        <%= label_tag "cart-pass", t("cart.sign") %>
-        <%= text_field_tag "cart-pass" %>
-
-        <%= f.submit t("order.buy_atm"), class: "btn btn-primary" %>
-
+<div class="show-order">
+  <table class="col-md-8 col-md-offset-2">
+    <tr>
+      <th><%= t "order.name" %></th>
+      <th><%= t "order.quanity" %></th>
+      <th><%= t "order.unit_price" %></th>
+      <th></th>
+      <th>
+        <%= t "order.total" %>: <%= number_to_currency current_order[:total_pay] %>
+      </th>
+    </tr>
+    <%= render @order_details %>
+  </table>
+  <% if current_order.id == @order.id %>
+    <div class="col-md-8 col-md-offset-2">
+      <%= link_to t("order.continue"), categories_path, class: "btn btn-primary col-md-4" %>
+      <%= form_for @order, html: {class: "td-direct-button col-md-4"} do |f| %>
+        <%= f.submit t("order.buy_direct"), class: "btn btn-primary td-order-button" %>
         <%= f.hidden_field :status, value: "ordered" %>
       <% end %>
-      <div class="clearfix"></div>
+      <%= submit_tag t("order.buy_atm"), class: "btn btn-primary td-atm td-order-button col-md-4" %>
+      <div class="atm-cart">
+        <div class="col-md-8 col-md-offset-2 td-atm-content">
+          <span class="icon"></span>
+          <%= form_for @order do |f| %>
+            <%= label_tag "name", t("filter.name") %>
+            <%= text_field_tag "name" %>
+            <%= label_tag "cart-date", t("cart.create") %>
+            <%= text_field_tag "cart-date" %>
+            <%= label_tag "cart-pass", t("cart.sign") %>
+            <%= text_field_tag "cart-pass" %>
+
+            <%= f.submit t("order.buy_atm"), class: "btn btn-primary" %>
+
+            <%= f.hidden_field :status, value: "ordered" %>
+          <% end %>
+          <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
     </div>
-    <div class="clearfix"></div>
-  </div>
-<% end %>
+  <% end %>
+</div>

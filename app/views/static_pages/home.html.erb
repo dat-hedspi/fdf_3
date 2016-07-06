@@ -1,9 +1,59 @@
-<div class="center jumbotron">
-  <h1><%= t "home.title" %></h1>
-  <p>
-    <%= t "home.this" %>
-    <a href="http://www.railstutorial.org/"><%= t "help.rails" %></a>
-    <%= t "home.title" %>
-  </p>
-  <%= link_to t("login.signup"), signup_path, class: "btn btn-lg btn-primary" %>
+<div class="center jumbotron td-background">
+  <%= image_tag("http://i.imgur.com/unm9xMS.png", class: "image-background") %>
+  <div class="td-home-content">
+    <h1><%= t "framgia.title" %></h1>
+    <%= link_to t("login.signup"), signup_path, class: "btn btn-lg btn-primary hvr-bounce-in" %>
+  </div>
+</div>
+
+<div class="content-section-a">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5 col-sm-6">
+        <hr class="section-heading-spacer">
+        <div class="clearfix"></div>
+        <h2 class="section-heading"><%= t "section.food-title" %></h2>
+        <p class="lead">
+          <%= t "section.food-1" %></br>
+          <%= t "section.food-2" %></br>
+          <%= t "section.food-3" %>
+        </p>
+      </div>
+      <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+        <%= image_tag "http://i.imgur.com/a02AqzV.jpg", class: "img-responsive" %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="content-section-b">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+        <hr class="section-heading-spacer">
+        <div class="clearfix"></div>
+        <h2 class="section-heading"><%= t "section.drink-title" %></h2>
+        <p class="lead">
+          <%= t "section.drink-1" %>
+        </p>
+      </div>
+      <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+        <%= image_tag "http://i.imgur.com/AsuEAET.jpg", class: "img-responsive" %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="content-section-a">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5 col-sm-6">
+        <hr class="section-heading-spacer">
+        <div class="clearfix"></div>
+        <h2 class="section-heading"><%= t "section.framgia" %><br><%= t "section.thanks" %></h2>
+        <p class="lead"><%= t "section.thanks-content" %></p>
+      </div>
+      <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+        <%= image_tag "http://i.imgur.com/cb7wIQq.jpg", class: "img-responsive" %>
+      </div>
+    </div>
+  </div>
 </div>

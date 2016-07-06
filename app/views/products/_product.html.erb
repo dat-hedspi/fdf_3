@@ -1,22 +1,24 @@
-<div>
-  <li id="product-<%= product.id %>">
-    <span class="image-show"><%= link_to product_image_select(product), product %></span><br>
-    <span class="name"><%= t "product.name" %><%= product.name %></span><br>
-    <span class="description"><%= t "product.description" %><%= product.description %></span><br>
-    <span class="price"><%= t "product.price" %><%= product.price %></span><br>
-    <span class="number"><%= t "product.number" %><%= product.number %></span><br>
-    <span class="rate">
-      <%= t "product.rate" %><%= product.rates.average :vote %>
-    </span><br>
+<li id="product-<%= product.id %>" class="td-prod-li col-md-5">
+  <div class="image-show">
+    <%= link_to product_image_select(product), product %>
     <%= form_for @order_detail do |f| %>
-      <div class="input-group">
-        <%= f.number_field :quantity, value: 1, class: "form-control", min: 1 %>
-        <div class="input-group-btn">
-          <%= f.hidden_field :product_id, value: product.id %>
-          <%= f.submit t("order.button"), class: "btn btn-primary" %>
+      <div class="input-group-btn">
+        <div class="input-group">
+          <%= f.number_field :quantity, value: 1, class: "form-control", min: 1 %>
         </div>
+        <%= f.hidden_field :product_id, value: product.id %>
+        <%= f.submit t("order.button"), class: "btn btn-primary" %>
       </div>
     <% end %>
-  </li>
-  <div class="clearfix"></div>
-</div>
+  </div>
+  <span class="name"><%= t "product.name" %><%= product.name %></span><br>
+  <div class="line"></div>
+  <span class="description"><%= t "product.description" %><%= product.description %></span><br>
+  <span class="price"><%= t "product.price" %><%= product.price %></span><br>
+  <span class="number"><%= t "product.number" %><%= product.number %></span><br>
+  <span class="rate">
+    <%= t "product.rate" %><%= product.rates.average :vote %>
+  </span><br>
+  <%= form_for @order_detail do |f| %>
+  <% end %>
+</li>

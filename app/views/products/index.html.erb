@@ -1,9 +1,10 @@
 <% provide :title, t("productindex.title") %>
-<div class="col-md-8">
+<div class="">
   <%= render "shared/filter_form" %>
   <%= will_paginate %>
-  <ul class="products", id="current-product">
+  <ul class="products col-md-offset-1 td-index-prod", id="current-product">
     <%= render @products %>
+    <div class="clearfix"></div>
   </ul>
   <%= will_paginate %>
 </div>
