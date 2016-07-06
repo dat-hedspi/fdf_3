@@ -1,5 +1,5 @@
 class RatesController < ApplicationController
-  before_action :logged_in_user, :check_rated, only: [:create]
+  before_action :logged_in_user, :normal_user?, :check_rated, only: [:create]
 
   def create
     @rate = Rate.new rate_params
