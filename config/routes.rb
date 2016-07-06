@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get "help" => "static_pages#help"
   get "signup"  => "users#new"
   get "login" => "sessions#new"
+  get "suggestion" => "suggestions#new"
   post "login" => "sessions#create"
   delete "logout" => "sessions#destroy"
 
@@ -25,5 +26,5 @@ Rails.application.routes.draw do
   end
   resources :relationships, only: [:create, :destroy, :index]
   resources :rates, only: [:create]
-  resources :suggestions, only: [:index, :create]
+  resources :suggestions, only: [:new, :create]
 end

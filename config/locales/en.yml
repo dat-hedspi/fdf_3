@@ -33,6 +33,7 @@ en:
     success: "Create product success"
     update_success: "Update product success"
     delete_success: "Delete product success"
+    back: "Back"
   product:
     name: "Name: "
     description: "Description: "
@@ -48,6 +49,8 @@ en:
     session_create_e : "Invalid email/password combination"
     comment: "Comment is too long"
     order_detail: "Order detail create error"
+    is_admin: "You are Admin"
+    not_admin: "You aer not Admin"
   login:
     title: "Log in"
     signup: "Sign Up"
@@ -56,6 +59,7 @@ en:
     newuser: "New user ?"
     remember: "Remember me on this computer"
     danger: "Please log in."
+    logged: "You are logged in"
   footer:
     title: "Framgia Laboratory"
   error:
@@ -72,6 +76,7 @@ en:
     phone: "Phone Number"
     address: "Address"
     deleted: "User deleted"
+    not_owner: "You are not owner"
   edit:
     edit: "edit"
     title: "Edit"
