@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
-  before_action :logged_in_user, :normal_user?, only: [:show, :index]
+  before_action :logged_in_user, :normal_user?, :store_locate,
+    only: [:show, :index]
 
   def show
     @category = Category.find_by id: params[:id]
@@ -28,5 +29,13 @@ class CategoriesController < ApplicationController
     else
       order_prod_default Product
     end
+  end
+
+  private
+  def store_locate
+    if session[:return_to]
+      session.delete(:return_to)
+    end
+    session[:return_to] ||= request.url if request.get?
   end
 end

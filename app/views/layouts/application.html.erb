@@ -18,6 +18,20 @@
         <%= yield %>
         <%= render "layouts/footer" %>
       </div>
+      <% if logged_in? %>
+        <div class="suggestion-box">
+          <div class="box"><b class="glyphicon glyphicon-comment"></b></div>
+          <section class="suggestion_form">
+            <%= form_for @suggestion = Suggestion.new do |f| %>
+              <%= render "shared/error_messages", object: @suggestion %>
+              <div class="field">
+                <%= f.text_area :content, placeholder: t("suggestion.add") %>
+              </div>
+              <%= f.submit t("suggestion.button"), class: "btn btn-primary" %>
+            <% end %>
+          </section>
+        </div>
+      <% end %>
     </div>
   </body>
 </html>

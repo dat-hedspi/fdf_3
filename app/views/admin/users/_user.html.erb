@@ -1,6 +1,6 @@
 <tr id="user-<%= user.id %>">
-  <td class="td-btn">
-    <%= link_to user_avatar_select(user), user %>
+  <td class="td-user-img">
+    <div class="td-btn"><%= link_to user_avatar_select(user), user %></div>
   </td>
   <td><%= link_to user.name, user %></td>
   <td><%= user.email %></td>
@@ -12,4 +12,3 @@
       data: {confirm: t("destroy.confirm")} unless user.admins? %>
   </td>
 </tr>
-<div class="clearfix"></div>

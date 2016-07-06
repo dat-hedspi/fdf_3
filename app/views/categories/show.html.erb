@@ -1,8 +1,12 @@
 <% provide :title, @category.name %>
+<%= render "categories/show_product" %>
 <div class="col-md-4">
-  <%= render "shared/filter_form" %>
-  <ul class="categories">
-    <%= render @category %>
-  </ul>
+  <div class="row">
+    <%= render "shared/filter_form" %>
+    <ul class="categories">
+      <%= render @category %>
+    </ul>
+  </div>
 </div>
 <%= render "show_product" %>
+<div class="clearfix"></div>

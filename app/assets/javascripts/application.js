@@ -23,7 +23,47 @@ var popup = function(){
   $(".icon").on("click", function(){
     $(".atm-cart").removeClass("block");
   });
-}
+};
 
-$(document).ready(popup)
-$(document).on("page:load", popup)
+$(document).ready(popup);
+$(document).on("page:load", popup);
+
+$(document).ready(function() {  
+  $("html").niceScroll();
+});
+
+var box = function(){
+  $(".box").on("click", function(){
+    $(".suggestion-box").toggleClass("filout");
+  });
+};
+
+$(document).ready(box);
+$(document).on("page:load", box);
+
+var hover = function(){
+  $("#rate-2").hover(function(){
+    $("#rate-2 .star").before().toggleClass("color-hover");
+    $("#rate-1 .star").before().toggleClass("color-hover");
+  });
+  $("#rate-3").hover(function(){
+    $("#rate-2 .star").before().toggleClass("color-hover");
+    $("#rate-1 .star").before().toggleClass("color-hover");
+    $("#rate-3 .star").before().toggleClass("color-hover");
+  });
+  $("#rate-4").hover(function(){
+    $("#rate-2 .star").before().toggleClass("color-hover");
+    $("#rate-1 .star").before().toggleClass("color-hover");
+    $("#rate-3 .star").before().toggleClass("color-hover");
+    $("#rate-4 .star").before().toggleClass("color-hover");
+  });
+  $("#rate-5").hover(function(){
+    $("#rate-2 .star").before().toggleClass("color-hover");
+    $("#rate-1 .star").before().toggleClass("color-hover");
+    $("#rate-3 .star").before().toggleClass("color-hover");
+    $("#rate-4 .star").before().toggleClass("color-hover");
+    $("#rate-5 .star").before().toggleClass("color-hover");
+  });
+};
+$(document).ready(hover);
+$(document).on("page:load", hover);
